@@ -10,4 +10,9 @@ public:
 	~Fraction();
 
 	bool operator== (Fraction& r_arg);
+	bool operator!= (Fraction& r_arg);
+	bool operator< (Fraction& r_arg);
+	bool operator=> (Fraction& r_arg);
+	bool operator> (Fraction& r_arg);
+	bool operator<= (Fraction& r_arg);
 };
