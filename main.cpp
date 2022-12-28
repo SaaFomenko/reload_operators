@@ -12,5 +12,6 @@ int main()
 	std::cout << "f1" << ((f1 > f2) ? " > " : " not > ") << "f2" << '\n';
 	std::cout << "f1" << ((f1 <= f2) ? " <= " : " not <= ") << "f2" << '\n';
 	std::cout << "f1" << ((f1 >= f2) ? " >= " : " not >= ") << "f2" << '\n';
+
 	return 0;
 }
