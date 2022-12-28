@@ -42,10 +42,10 @@ bool Fraction::operator>(Fraction& r_arg)
 
 bool Fraction::operator>=(Fraction& r_arg)
 {
-	return *this < r_arg;
+	return !(*this < r_arg);
 }
 
 bool Fraction::operator<=(Fraction& r_arg)
 {
-	return *this > r_arg;
+	return !(*this > r_arg);
 }
