@@ -15,4 +15,10 @@ public:
 	bool operator>=(Fraction& r_arg);
 	bool operator>(Fraction& r_arg);
 	bool operator<=(Fraction& r_arg);
+	void operator+(Fraction& r_arg);
+	void operator-(Fraction& r_arg);
+	void operator*(Fraction& r_arg);
+	void operator/(Fraction& r_arg);
+	void operator++(Fraction& r_arg);
+	void operator--(Fraction& r_arg, int);
 };
