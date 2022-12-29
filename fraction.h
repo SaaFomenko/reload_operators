@@ -9,16 +9,20 @@ public:
 	Fraction(int numerator, int denominator);
 	~Fraction();
 
+	void setValid();
+
 	bool operator==(Fraction& r_arg);
 	bool operator!=(Fraction& r_arg);
 	bool operator<(Fraction& r_arg);
 	bool operator>=(Fraction& r_arg);
 	bool operator>(Fraction& r_arg);
 	bool operator<=(Fraction& r_arg);
-	void operator+(Fraction& r_arg);
-	void operator-(Fraction& r_arg);
-	void operator*(Fraction& r_arg);
-	void operator/(Fraction& r_arg);
-	void operator++(Fraction& r_arg);
-	void operator--(Fraction& r_arg, int);
+	Fraction& operator+(Fraction& r_arg);
+	Fraction& operator-(Fraction& r_arg);
+	Fraction& operator*(Fraction& r_arg);
+	Fraction& operator/(Fraction& r_arg);
+	Fraction& operator-();
+	Fraction& operator++();
+	Fraction& operator--();
+	Fraction operator--(int);
 };
