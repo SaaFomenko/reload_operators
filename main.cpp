@@ -3,15 +3,20 @@
 
 int main()
 {
-	Fraction f1(4, 3);
-	Fraction f2(6, 3);
+	const int num_fraction = 2;
+	int numerator = 0;
+	int denominator = 0;
 
-	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 < f2) ? " < " : " not < ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 > f2) ? " > " : " not > ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 <= f2) ? " <= " : " not <= ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 >= f2) ? " >= " : " not >= ") << "f2" << '\n';
+	Fraction fraction[num_fraction];
+
+	for (int i = 0; i < num_fraction)
+	{
+		try
+		{
+
+		}
+		
+	}
 
 	return 0;
 }
