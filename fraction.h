@@ -10,6 +10,8 @@ public:
 	~Fraction();
 
 	void setValid();
+	int getNumerator();
+	int getDenominator();
 
 	bool operator==(Fraction& r_arg);
 	bool operator!=(Fraction& r_arg);
@@ -17,10 +19,10 @@ public:
 	bool operator>=(Fraction& r_arg);
 	bool operator>(Fraction& r_arg);
 	bool operator<=(Fraction& r_arg);
-	Fraction& operator+(Fraction& r_arg);
-	Fraction& operator-(Fraction& r_arg);
-	Fraction& operator*(Fraction& r_arg);
-	Fraction& operator/(Fraction& r_arg);
+	Fraction operator+(Fraction& r_arg);
+	Fraction operator-(Fraction& r_arg);
+	Fraction operator*(Fraction& r_arg);
+	Fraction operator/(Fraction& r_arg);
 	Fraction& operator-();
 	Fraction& operator++();
 	Fraction& operator--();

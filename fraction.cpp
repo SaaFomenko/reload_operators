@@ -10,6 +10,16 @@ Fraction::Fraction(int numerator, int denominator) :
 
 Fraction::~Fraction(){}
 
+int Fraction::getNumerator()
+{
+	return numerator_;
+}
+
+int Fraction::getDenominator()
+{
+	return denominator_;
+}
+
 void Fraction::setValid()
 {
 	if (numerator_ == 0)
@@ -22,51 +32,84 @@ void Fraction::setValid()
 	}
 }
 
-Fraction& Fraction::operator+(Fraction& r_arg)
+Fraction Fraction::operator+(Fraction& r_arg)
 {
+	int numerator = 0;
+	int denominator = 0;
+
 	if (denominator_ == r_arg.denominator_)
 	{
-				numerator_ += r_arg.numerator_; 
+				numerator = numerator_ + r_arg.numerator_; 
 		
-		return *this;
+		return Fraction(numerator, denominator_);
 	}
 
-	numerator_ = numerator_ * r_arg.denominator_ + r_arg.numerator_ * 
+	numerator = numerator_ * r_arg.denominator_ + r_arg.numerator_ * 
 		denominator_;
-	denominator_ *= r_arg.denominator_;
+	denominator = denominator_ * r_arg.denominator_;
 
-	return *this;
+	return Fraction(numerator, denominator);
 }
 
-Fraction& Fraction::operator-(Fraction& r_arg)
+Fraction Fraction::operator-(Fraction& r_arg)
 {
+	int numerator = 0;
+	int denominator = 0;
+
 	if (denominator_ == r_arg.denominator_)
 	{
-				numerator_ -= r_arg.numerator_; 
+				numerator = numerator_ - r_arg.numerator_; 
 		
-		return *this;
+		return Fraction(numerator, denominator_);
 	}
 
-	numerator_ = numerator_ * r_arg.denominator_ - r_arg.numerator_ * 
+	numerator = numerator_ * r_arg.denominator_ - r_arg.numerator_ * 
 		denominator_;
-	denominator_ *= r_arg.denominator_;
+	denominator = denominator_ * r_arg.denominator_;
 
-	return *this;
+	return Fraction(numerator, denominator);
 }
 
-Fraction& Fraction::operator*(Fraction& r_arg)
+Fraction Fraction::operator*(Fraction& r_arg)
 {
-	numerator_ *= r_arg.numerator_;
-	denominator_ *= r_arg.denominator_;
+	int numerator = 0;
+	int denominator = 0;
 
-	return *this;
+	if (numerator_ == r_arg.denominator_)
+	{
+		return Fraction(r_arg.numerator_, denominator_);
+	}
+
+	if (denominator_ == r_arg.numerator_)
+	{
+		return Fraction(numerator_, r_arg.denominator_);
+	}
+
+	numerator = numerator_ * r_arg.numerator_;
+	denominator = denominator_ * r_arg.denominator_;
+
+	return Fraction(numerator, denominator);
 }
 
-Fraction& Fraction::operator/(Fraction& r_arg)
+Fraction Fraction::operator/(Fraction& r_arg)
 {
-			numerator_ *= r_arg.denominator_;
-			denominator_*= r_arg.numerator_;
-	return *this;
+	int numerator = 0;
+	int denominator = 0;
+
+	if (numerator_ == r_arg.numerator_)
+	{
+		return Fraction(r_arg.numerator_, denominator_);
+	}
+
+	if (denominator_ == r_arg.denominator_)
+	{
+		return Fraction(numerator_, r_arg.denominator_);
+	}
+
+	numerator = numerator_ * r_arg.denominator_;
+	denominator =	denominator_* r_arg.numerator_;
+
+	return Fraction(numerator, denominator);
 }
 
 Fraction& Fraction::operator++()
@@ -89,12 +132,12 @@ Fraction Fraction::operator--(int)
 
 	--(*this);
 
-	return *this;
+	return temp;
 }
 
 Fraction& Fraction::operator-()
 {
-	-numerator_;
+	numerator_ *= -1;
 	
 	return *this;
 }
